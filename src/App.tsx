@@ -1,16 +1,18 @@
-import "styles/global.scss";
-import { Provider } from "react-redux";
-import store from "redux/store";
-
-import Home from "pages";
+import "./styles/global.scss";
+import { BrowserRouter } from 'react-router-dom';
+import AppRouter from './configRouter/index';
+import 'antd/dist/antd.less'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 function App(): JSX.Element {
   return (
-    <Provider store={store}>
-      <div className="App">
-        <Home />
-      </div>
-    </Provider>
+    <BrowserRouter>
+        <div className="App">
+        <AppRouter />
+        </div>
+    </BrowserRouter>
+
   );
 }
 

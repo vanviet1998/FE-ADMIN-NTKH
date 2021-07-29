@@ -1,21 +1,16 @@
 import React from "react";
-import styles from "./index.module.scss";
+import { Button, ButtonProps } from "antd";
+import { TYPE_BTN } from "common/enum";
+import "./btn.styles.scss"
 
-export type IButton = React.DetailedHTMLProps<
-  React.AnchorHTMLAttributes<HTMLAnchorElement>,
-  HTMLAnchorElement
->;
+type ICusTomProps = {
+  typebtn?: TYPE_BTN
+}
+type IProps = ButtonProps & ICusTomProps
 
-export const Button: React.FC<IButton> = ({ children, ...props }) => {
+export const UIButton: React.FC<IProps> = ({ children, ...props }) => {
+  const type = props.typebtn ? props.typebtn : TYPE_BTN.success
   return (
-    <a
-      {...props}
-      target="_blank"
-      href="https://pankod.github.io/superplate/"
-      rel="noopener noreferrer"
-      className={styles.button}
-    >
-      {children}
-    </a>
+    <Button {...props} className={`custom-btn ${props.className} ${type} `}>{children}</Button>
   );
 };
