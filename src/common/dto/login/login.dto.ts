@@ -20,7 +20,9 @@ export class LoginReponseBodyDTO {
 export class PayLoadLoginBodyDTO {
     @Expose()
     @IsString()
-    @MinLength(1)
+    @MinLength(1,{
+        message:"example error"
+    })
     public username!:string;
    
     @Expose()
