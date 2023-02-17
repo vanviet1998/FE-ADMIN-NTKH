@@ -24,7 +24,7 @@ export const Login: React.FC = () => {
         dtoValidation: PayLoadLoginBodyDTO,
         onSubmit: async (values) => {
             const reponse = await serviceLogin.login(values)
-            addAuthoz(reponse.token, 365)
+            addAuthoz(reponse.accessToken, 365)
             push(PATH.HOME)
             return reponse
 

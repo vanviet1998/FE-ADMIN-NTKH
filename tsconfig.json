@@ -1,5 +1,8 @@
 {
   "compilerOptions": {
+    "composite": true,
+    "declaration": true,
+    "declarationMap": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "target": "es6",
@@ -20,16 +23,20 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noUnusedLocals": true,
-		"noUnusedParameters": true,
+    "types": [
+      "reflect-metadata"
+    ],
+    "noUnusedParameters": true,
     "noEmit": true,
     "jsx": "react-jsx",
     "typeRoots": [
       "./node_modules/@types",
       "./src/@types"
     ],
-    "baseUrl": "./src"
+    "baseUrl": "src"
   },
   "include": [
-    "src"
+    "src",
+		".src/shared/**/*.ts",
   ]
 }
